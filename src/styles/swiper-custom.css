@@ -1,0 +1,52 @@
+/**
+ * Swiper Custom Overrides
+ * Branded pagination bullets (used by Testimonials Swiper)
+ */
+
+/* === Pagination Bullets === */
+.swiper-pagination-bullet{
+  background: rgba(255,255,255,.2) !important;
+  opacity: 1 !important;
+  width: 8px;
+  height: 8px;
+  transition: background .2s, width .2s;
+}
+.swiper-pagination-bullet-active{
+  background: rgba(255,59,47,.8) !important;
+  width: 22px !important;
+  border-radius: 999px !important;
+}
+
+/* === Review Swiper === */
+.review-swiper{
+  padding-bottom: 0;
+}
+.review-swiper .swiper-wrapper{
+  align-items: stretch;
+}
+.review-swiper .swiper-slide{
+  height: auto;
+}
+.review-swiper .swiper-slide .testimonial{
+  height: 100%;
+}
+.review-swiper .swiper-pagination{
+  position: relative !important;
+  bottom: auto !important;
+  margin-top: 28px;
+}
+.review-swiper .swiper-pagination-bullet{
+  width: 10px;
+  height: 10px;
+}
+.review-swiper .swiper-pagination-bullet-active{
+  width: 28px !important;
+}
+
+/* === Light Mode === */
+[data-theme="light"] .swiper-pagination-bullet{
+  background: rgba(0,0,0,.15) !important;
+}
+[data-theme="light"] .swiper-pagination-bullet-active{
+  background: rgba(230,53,38,.8) !important;
+}

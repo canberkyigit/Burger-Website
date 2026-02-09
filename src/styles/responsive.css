@@ -1,0 +1,191 @@
+/**
+ * Responsive
+ * Media queries for tablet, mobile, and small mobile
+ */
+
+/* ========== TABLET (max 980px) ========== */
+@media (max-width: 980px){
+  /* Topbar */
+  .topbar__inner{ justify-content: center; }
+  .topbar__left{ flex-wrap: wrap; justify-content: center; gap: 8px; }
+  .topbar__left .dot{ display: none; }
+
+  /* Header - hamburger popup menu */
+  .hamburger{ display: flex; z-index: 110; }
+  .header__cta{ display: none; }
+  .nav--desktop{ display: none; }
+
+  /* Hero */
+  .hero__inner{
+    grid-template-columns: 1fr;
+    padding: 40px 0 36px;
+    text-align: center;
+  }
+  .hero__content{ display:flex; flex-direction:column; align-items:center; }
+  .hero__desc{ text-align: center; }
+  .hero__cta{ justify-content: center; }
+  .hero__visual{ width: 100%; max-width: 400px; margin: 0 auto; }
+  .carousel{ width: 100%; margin: 0 auto; }
+
+  /* Sections */
+  .grid-2{ grid-template-columns: 1fr; }
+  .section{ padding: 52px 0; }
+  .section__head{ text-align: center; }
+  .section__lead{ margin-inline: auto; }
+
+  /* Cards */
+  .cards{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .cards--drinks{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .sos-grid{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+  /* Contact */
+  .contact-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+  /* Gallery */
+  .gallery{ grid-template-columns: repeat(2, 1fr); }
+  .gallery__item--wide{ grid-column: span 2; }
+  .shot--1, .shot--2{ grid-column: span 12; }
+  .shot--3, .shot--4, .shot--5{ grid-column: span 6; }
+
+  /* Testimonials */
+  .review-carousel__page{ grid-template-columns: repeat(2, 1fr); }
+  .review-carousel__btn--prev{ left: -8px; }
+  .review-carousel__btn--next{ right: -8px; }
+
+  /* Footer */
+  .footer__inner{ flex-direction: column; text-align: center; gap: 14px; }
+  .footer__brand{ flex-direction: column; }
+}
+
+/* ========== MOBILE (max 640px) ========== */
+@media (max-width: 640px){
+  body{ padding-bottom: calc(68px + env(safe-area-inset-bottom, 0px)); }
+  .container{ width: calc(100% - 28px); }
+
+  /* Topbar */
+  .topbar__left{ font-size: 12px; gap: 6px; }
+
+  /* Hero */
+  .hero__inner{ padding: 28px 0 24px; gap: 24px; }
+  .hero__kicker{ font-size: 14px; }
+  .hero__title{ font-size: clamp(34px, 10vw, 52px); }
+  .badge{ font-size: 11px; padding: 6px 10px; }
+  .hero__desc{ font-size: 14px; }
+  .hero__cta .btn{ width: 100%; }
+  .hero__visual{ max-width: 100%; }
+  .carousel{ width: 100%; }
+  .carousel__btn{ width: 34px; height: 34px; font-size: 18px; }
+  .carousel__btn--prev{ left: 4px; }
+  .carousel__btn--next{ right: 4px; }
+  .burger-card__img{ padding: 20px 16px 8px; height: 220px; }
+  .burger-card__info{ padding: 12px 14px 14px; }
+  .burger-card__info strong{ font-size: 16px; }
+  .burger-card__info span{ font-size: 12px; }
+  .burger{ width: min(180px, 60vw); gap: 5px; }
+  .burger--small{ width: min(140px, 50vw); }
+  .burger-card .burger--small{ width: min(180px, 60vw); }
+  .bun--top{ height: 52px; }
+  .bun--bottom{ height: 38px; }
+  .patty{ height: 24px; }
+  .burger--double .patty{ height: 20px; }
+  .lettuce{ height: 16px; }
+  .tomato{ height: 14px; }
+  .cheese{ height: 14px; }
+  .price .new{ font-size: 18px; }
+
+  /* Cards */
+  .cards{ grid-template-columns: 1fr; gap: 10px; }
+  .cards--drinks{ grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .card{ padding: 14px; }
+  .card__price{ font-size: 18px; }
+
+  /* Sos */
+  .sos-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .sos-item{ padding: 10px 8px; font-size: 13px; }
+
+  /* Contact */
+  .contact-grid{ grid-template-columns: 1fr; }
+  .contact-card__top{ padding: 14px; }
+  .contact-link{ padding: 10px 14px; font-size: 13px; }
+
+  /* Gallery */
+  .gallery{ grid-template-columns: 1fr; }
+  .gallery__item--wide{ grid-column: span 1; }
+  .gallery__placeholder{ min-height: 160px; }
+  .shot--3, .shot--4, .shot--5{ grid-column: span 12; }
+  .shot{ min-height: 120px; }
+  .shot--1, .shot--2{ min-height: 160px; }
+
+  /* Testimonials */
+  .review-carousel__page{ grid-template-columns: 1fr; }
+  .review-carousel__btn{ width: 34px; height: 34px; font-size: 18px; }
+  .review-carousel__btn--prev{ left: 4px; }
+  .review-carousel__btn--next{ right: 4px; }
+
+  /* About */
+  .stats-row{ grid-template-columns: repeat(2, 1fr); }
+  .stat__number{ font-size: 26px; }
+  .about-features{ grid-template-columns: repeat(2, 1fr); }
+  .hours-card__status{ padding: 5px 10px; font-size: 11px; }
+  .brand__logo{ height: 52px; }
+
+  /* Quotes */
+  .cards--3{ grid-template-columns: 1fr; }
+
+  /* Footer */
+  .footer__links{ flex-wrap: wrap; justify-content: center; gap: 8px; }
+  .footer__logo{ height: 36px; }
+
+  /* Social */
+  .social{ justify-content: center; }
+
+  /* Product Modal */
+  .product-modal{
+    width: 100%;
+    max-height: 92vh;
+    overflow-y: auto;
+    border-radius: 20px;
+  }
+  .product-modal__visual{
+    padding: 40px 24px 24px;
+    min-height: 200px;
+  }
+  .product-modal__visual .burger,
+  .product-modal__visual .product-emoji{
+    transform: scale(1.3);
+  }
+  .product-modal__content{
+    padding: 0 24px 28px;
+  }
+  .product-modal__name{
+    font-size: 24px;
+  }
+  .product-modal__price{
+    font-size: 28px;
+  }
+}
+
+/* ========== SMALL MOBILE (max 380px) ========== */
+@media (max-width: 380px){
+  .hero__title{ font-size: 30px; }
+  .hero__kicker{ font-size: 12px; }
+  .cards--drinks{ grid-template-columns: 1fr; }
+  .topbar__left span{ font-size: 11px; }
+  .brand__logo{ height: 44px; }
+  .hours__row{ font-size: 13px; padding: 10px 8px; }
+  .stat__number{ font-size: 22px; }
+  .burger{ width: min(150px, 55vw); gap: 4px; }
+  .burger--small{ width: min(120px, 45vw); }
+  .burger-card .burger--small{ width: min(150px, 55vw); }
+  .bun--top{ height: 44px; }
+  .bun--bottom{ height: 32px; }
+  .patty{ height: 20px; }
+  .burger--double .patty{ height: 16px; }
+  .lettuce{ height: 14px; }
+  .tomato{ height: 12px; }
+  .cheese{ height: 12px; }
+  .burger-card__img{ padding: 16px 12px 6px; height: 180px; }
+  .burger-card__info strong{ font-size: 14px; }
+  .burger-card__info span{ font-size: 11px; }
+  .price .new{ font-size: 16px; }
+}

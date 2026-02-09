@@ -1,0 +1,193 @@
+/**
+ * About Section
+ * Stats row, feature cards, working hours card
+ */
+
+/* Stats Row */
+.stats-row{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 32px;
+}
+.stat{
+  text-align: center;
+  padding: 22px 14px;
+  border-radius: 18px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  transition: border-color .2s, background .2s;
+}
+.stat:hover{
+  background: rgba(255,59,47,.06);
+  border-color: rgba(255,59,47,.2);
+}
+.stat__number{
+  font-size: 32px;
+  font-weight: 1000;
+  background: linear-gradient(135deg, var(--brand), var(--brand2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+}
+.stat__label{
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+/* About Features */
+.about-features{
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 14px;
+  margin-bottom: 32px;
+}
+.about-feat{
+  padding: 22px 18px;
+  border-radius: 18px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  text-align: center;
+  transition: border-color .3s, transform .3s;
+}
+.about-feat:hover{
+  border-color: rgba(255,59,47,.2);
+  transform: translateY(-4px);
+}
+.about-feat__ico{
+  font-size: 36px;
+  margin-bottom: 12px;
+  filter: saturate(1.2);
+}
+.about-feat h3{
+  margin: 0 0 8px;
+  font-size: 15px;
+}
+.about-feat p{
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* Hours Card */
+.hours-card{
+  border-radius: 24px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 16px 60px rgba(0,0,0,.35), inset 0 1px 0 rgba(255,255,255,.06);
+  overflow: hidden;
+  max-width: 580px;
+  margin: 0 auto;
+  backdrop-filter: blur(12px);
+}
+.hours-card__header{
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 24px 28px;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+  background: rgba(255,255,255,.02);
+}
+.hours-card__header h3{ margin: 0; font-size: 20px; }
+.hours-card__ico{
+  width: 48px; height: 48px;
+  border-radius: 16px;
+  display: grid; place-items: center;
+  background: linear-gradient(135deg, rgba(227,78,38,.18), rgba(227,78,38,.08));
+  border: 1px solid rgba(227,78,38,.22);
+  font-size: 24px;
+  box-shadow: 0 4px 16px rgba(227,78,38,.15);
+}
+.hours-card__status{
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(52,199,89,.1);
+  border: 1px solid rgba(52,199,89,.2);
+  border-radius: 30px;
+  padding: 6px 14px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #34c759;
+}
+.hours-status-dot{
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #34c759;
+  display: inline-block;
+  animation: statusPulse 2s ease-in-out infinite;
+}
+@keyframes statusPulse{
+  0%, 100%{ opacity: 1; box-shadow: 0 0 0 0 rgba(52,199,89,.4); }
+  50%{ opacity: .7; box-shadow: 0 0 0 6px rgba(52,199,89,0); }
+}
+
+/* Closed state — red */
+.hours-card__status--closed{
+  background: rgba(255,59,47,.1);
+  border-color: rgba(255,59,47,.25);
+  color: #ff3b2f;
+}
+.hours-card__status--closed .hours-status-dot{
+  background: #ff3b2f;
+  animation: statusPulseClosed 2s ease-in-out infinite;
+}
+@keyframes statusPulseClosed{
+  0%, 100%{ opacity: 1; box-shadow: 0 0 0 0 rgba(255,59,47,.4); }
+  50%{ opacity: .7; box-shadow: 0 0 0 6px rgba(255,59,47,0); }
+}
+.hours-card__grid{ padding: 8px 28px 4px; }
+.hours__row{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 13px 14px;
+  margin: 4px 0;
+  border-radius: 12px;
+  color: var(--muted);
+  font-size: 15px;
+  transition: background .2s ease;
+}
+.hours__row:hover{
+  background: rgba(255,255,255,.04);
+}
+.hours__day-ico{
+  font-size: 8px;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+.hours__row strong{
+  font-weight: 600;
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: .3px;
+}
+.hours__row--closed{
+  background: rgba(255,59,47,.06);
+  border-radius: 12px;
+}
+.hours__row--closed strong{
+  color: rgba(255,59,47,.8);
+  font-weight: 700;
+}
+.hours__row--today{
+  background: rgba(227,78,38,.08);
+  border: 1px solid rgba(227,78,38,.15);
+  border-radius: 12px;
+}
+.hours__row--today span:first-child{
+  font-weight: 700;
+  color: var(--text);
+}
+.hours-card__today{
+  padding: 16px 28px 22px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+  border-top: 1px solid rgba(255,255,255,.05);
+}

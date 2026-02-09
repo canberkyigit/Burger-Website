@@ -1,0 +1,60 @@
+/**
+ * Bottom Navigation Bar
+ * Fixed mobile-only navigation at the bottom of the screen
+ */
+.bottom-nav{
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  background: var(--header-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid var(--line);
+  padding: 6px 0 calc(env(safe-area-inset-bottom, 4px) + 4px);
+  justify-content: space-around;
+  transition: background .3s;
+}
+
+@media (max-width: 640px){
+  .bottom-nav{ display: flex; }
+}
+
+.bottom-nav__item{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  padding: 4px 12px;
+  text-decoration: none;
+  color: var(--muted);
+  font-size: 10px;
+  transition: color .2s, transform .2s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.bottom-nav__item--active{
+  color: var(--brand);
+}
+
+.bottom-nav__item:active{
+  transform: scale(0.92);
+}
+
+.bottom-nav__icon{
+  font-size: 20px;
+  line-height: 1;
+}
+
+.bottom-nav__label{
+  font-weight: 800;
+  letter-spacing: .3px;
+}
+
+/* Light mode */
+[data-theme="light"] .bottom-nav{
+  background: rgba(245,245,247,.85);
+  border-top-color: rgba(0,0,0,.08);
+}

@@ -1,0 +1,24 @@
+/**
+ * Topbar
+ * Top info bar with location and social links
+ */
+.topbar{
+  background: var(--overlay-bg);
+  border-bottom: 1px solid var(--line);
+  transition: background .35s ease;
+}
+.topbar__inner{
+  display:flex; align-items:center; justify-content:space-between;
+  padding: 10px 0;
+  gap: 18px;
+}
+.topbar__left{
+  display:flex; align-items:center; gap: 12px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.topbar__right .link{
+  color: var(--text);
+  font-weight: 650;
+  font-size: 14px;
+}

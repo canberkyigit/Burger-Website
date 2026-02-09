@@ -1,0 +1,102 @@
+/**
+ * Menu Section
+ * Menu cards, drink cards, sauce grid
+ */
+
+/* Cards Grid */
+.cards{
+  display:grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+.cards--3{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.cards--drinks{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+.card{
+  position: relative;
+  padding: 18px;
+  border-radius: 18px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  transition: border-color .2s, box-shadow .2s, background .35s ease;
+}
+.card:hover{
+  border-color: var(--card-hover-border);
+  box-shadow: 0 8px 30px var(--card-hover-shadow);
+}
+.card__tag{
+  display:inline-flex;
+  padding: 6px 10px;
+  border-radius: 999px;
+  background: var(--tag-bg);
+  border: 1px solid var(--tag-border);
+  font-weight: 900;
+  font-size: 12px;
+  color: var(--text);
+}
+.card h3{ margin: 12px 0 6px; }
+.card__bottom{
+  margin-top: 12px;
+  display:flex; align-items:baseline; justify-content:space-between;
+  gap: 10px;
+}
+.card__price{ font-size: 22px; font-weight: 1000; }
+
+.card--drink{
+  padding: 14px 18px;
+}
+.card--drink h3{ margin: 0 0 4px; font-size: 16px; }
+.card--drink .card__bottom{ margin-top: 8px; }
+.card--drink .card__price{ font-size: 18px; }
+
+/* Clickable cards */
+.card--clickable{
+  cursor: pointer;
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  position: relative;
+}
+.card--clickable::after{
+  content: '\1F441 Detay';
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 11px;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.1);
+  padding: 3px 10px;
+  border-radius: 20px;
+  color: var(--muted);
+  opacity: 0;
+  transition: opacity .25s ease;
+  pointer-events: none;
+}
+.card--clickable:hover{
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 12px 40px rgba(0,0,0,.3);
+  border-color: var(--accent);
+}
+.card--clickable:hover::after{
+  opacity: 1;
+}
+
+/* Sos Grid */
+.sos-grid{
+  display:grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+}
+.sos-item{
+  padding: 14px 12px;
+  border-radius: 14px;
+  background: var(--card-bg);
+  border: 1px solid var(--tag-border);
+  text-align:center;
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--muted);
+  transition: border-color .2s, background .2s;
+}
+.sos-item:hover{
+  background: rgba(255,59,47,.08);
+  border-color: rgba(255,59,47,.3);
+}

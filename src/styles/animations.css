@@ -1,0 +1,22 @@
+/**
+ * Animations
+ * Scroll-triggered fade/slide animations
+ */
+.anim{
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity .6s ease-out, transform .6s ease-out;
+}
+.anim.visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+.anim[data-anim="fade-up"]{ transform: translateY(30px); }
+.anim[data-anim="fade-left"]{ transform: translateX(-30px); }
+.anim[data-anim="fade-right"]{ transform: translateX(30px); }
+.anim.visible[data-anim="fade-up"],
+.anim.visible[data-anim="fade-left"],
+.anim.visible[data-anim="fade-right"]{
+  opacity: 1;
+  transform: translate(0);
+}

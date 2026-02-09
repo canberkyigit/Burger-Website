@@ -1,0 +1,222 @@
+/**
+ * Hero Section
+ * Main hero area with burger illustrations
+ */
+.hero{
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+}
+.hero__bg{
+  position:absolute; inset: -50px 0 0 0;
+  background:
+    radial-gradient(900px 400px at 15% 20%, rgba(255,59,47,.20), transparent 60%),
+    radial-gradient(900px 500px at 85% 30%, rgba(255,176,0,.16), transparent 55%),
+    radial-gradient(1200px 700px at 50% 100%, rgba(255,255,255,.05), transparent 60%),
+    linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.65));
+  transform: scale(1.04);
+  filter: saturate(1.05);
+}
+.hero__inner{
+  position: relative;
+  display:grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 34px;
+  padding: 64px 0 52px;
+  align-items:center;
+}
+.badge{
+  display:inline-flex;
+  gap: 10px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  background: rgba(255,59,47,.12);
+  border: 1px solid rgba(255,59,47,.25);
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 13px;
+  margin-bottom: 14px;
+}
+.hero h1{
+  margin: 0 0 12px;
+  line-height: 0.95;
+}
+.hero__kicker{
+  display:block;
+  font-size: clamp(22px, 3vw, 32px);
+  letter-spacing: .28em;
+  color: rgba(255,255,255,.78);
+  font-weight: 900;
+}
+.hero__title{
+  display:block;
+  font-size: clamp(56px, 7.2vw, 90px);
+  font-weight: 1000;
+  letter-spacing: .02em;
+}
+.hero__title--outline{
+  color: transparent;
+  -webkit-text-stroke: 2px rgba(255,255,255,.85);
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-shadow: 0 22px 60px rgba(0,0,0,.45);
+}
+.hero__title-burger{
+  color: #fff;
+  -webkit-text-fill-color: initial;
+  -webkit-text-stroke: 0;
+  text-shadow: none;
+  display: inline-block;
+  transform: rotate(90deg);
+  filter: saturate(1.3) drop-shadow(0 4px 12px rgba(0,0,0,.4));
+  margin-left: -4px;
+  transition: transform .3s ease;
+}
+.hero__title-burger:hover{
+  transform: rotate(0deg) scale(1.1);
+}
+.hero__desc{
+  margin: 12px 0 18px;
+  color: var(--muted);
+  max-width: 52ch;
+}
+.hero__cta{ display:flex; gap: 12px; flex-wrap: wrap; }
+.hero__meta{
+  margin-top: 18px;
+  display:flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.meta{
+  display:flex; align-items:center; gap: 10px;
+  padding: 10px 12px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.10);
+  border-radius: 14px;
+  color: var(--muted);
+  font-weight: 700;
+  font-size: 14px;
+}
+.meta strong{ filter: saturate(1.1); }
+
+.hero__visual{
+  position: relative;
+  display:grid;
+  place-items:center;
+  min-width: 0;
+  overflow: hidden;
+}
+
+/* Burger Card (carousel slide) */
+.burger-card{
+  width: 100%;
+  border-radius: 22px;
+  background: var(--card-bg);
+  border: 1px solid var(--card-hover-border);
+  box-shadow: var(--shadow), 0 0 80px rgba(255,59,47,.08);
+  overflow:hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.burger-card__shine{
+  position:absolute; inset:-40%;
+  background: radial-gradient(circle at 30% 30%, rgba(255,176,0,.14), transparent 55%);
+  pointer-events:none;
+}
+.burger-card__img{
+  padding: 34px 28px 10px;
+  display:grid;
+  place-items:center;
+  height: 300px;
+  overflow: hidden;
+}
+.burger-card__img .burger{
+  transform: scale(0.85);
+  transform-origin: center;
+}
+.burger-card__info{
+  padding: 14px 18px 18px;
+  border-top: 1px solid rgba(255,255,255,.10);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+.burger-card__info strong{ display:block; font-size: 18px; }
+.burger-card__info span{
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.4;
+  margin-top: 4px;
+  min-height: calc(2 * 1.4 * 1em);
+}
+
+.price{
+  margin-top: 12px;
+  display:flex; gap: 10px; align-items:baseline;
+}
+.price .old{ color: var(--muted); text-decoration: line-through; font-weight: 800; }
+.price .new{ font-size: 22px; font-weight: 1000; }
+
+/* CSS Burger Illustration */
+.burger{
+  width: 230px;
+  display:grid;
+  gap: 8px;
+  filter: drop-shadow(0 22px 40px rgba(0,0,0,.55));
+}
+.bun{
+  height: 64px;
+  border-radius: 90px;
+  background: linear-gradient(180deg, #f7c97b, #d8963f);
+  border: 1px solid rgba(0,0,0,.12);
+}
+.bun--top{
+  height: 78px;
+  border-radius: 90px 90px 40px 40px;
+  position: relative;
+}
+.bun--top::after{
+  content:"";
+  position:absolute;
+  inset: 14px 24px auto 24px;
+  height: 14px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.20);
+}
+.lettuce{
+  height: 22px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #3fd07c, #1a7a41);
+}
+.tomato{
+  height: 18px;
+  border-radius: 18px;
+  background: linear-gradient(180deg, #ff5a4f, #b21616);
+}
+.cheese{
+  height: 18px;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #ffd54a, #f3a900);
+  transform: skewX(-8deg);
+}
+.patty{
+  height: 34px;
+  border-radius: 22px;
+  background: linear-gradient(180deg, #6a3d26, #3a1f12);
+}
+.bun--bottom{
+  height: 52px;
+  border-radius: 40px 40px 90px 90px;
+}
+.burger--double{ gap: 5px; }
+.burger--double .patty{ height: 28px; }
+.burger--small{ width: 180px; }
+.burger-card .burger--small{ width: 230px; }
+.patty--mushroom{
+  background: linear-gradient(180deg, #7a5033, #4a2a15);
+}
